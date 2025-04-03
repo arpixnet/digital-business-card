@@ -1,0 +1,36 @@
+body, button, input, select, textarea {
+    font-family: 'Space Grotesk', 'Poppins', sans-serif;
+}
+
+body {
+    @apply bg-slate-50 text-slate-600 dark:bg-slate-950 dark:text-slate-100;
+}
+
+.container {
+    width: 100% !important;
+}
+@media (min-width: 640px) {
+    .container {
+        max-width: 768px !important;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px !important;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 768px !important;
+    }
+}
+@media (min-width: 1280px) {
+    .container {
+        max-width: 768px !important;
+    }
+}
+@media (min-width: 1536px) {
+    .container {
+        max-width: 768px !important;
+    }
+}

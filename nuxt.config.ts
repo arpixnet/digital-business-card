@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     },
     locales: [
       { code: 'es', language: 'es-ES', file: 'es.json' },
-      // { code: 'en', language: 'en-US', file: 'en.json' },
+      { code: 'en', language: 'en-US', file: 'en.json' },
     ],
     defaultLocale: 'es',
     lazy: true,

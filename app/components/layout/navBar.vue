@@ -69,7 +69,7 @@
 </script>
 
 <template>
-    <div class="mx-auto my-2 flex w-full items-center justify-center z-20 fixed md:relative bottom-0 md:top-0">
+    <div class="mx-auto my-2 flex w-full items-center justify-center z-20 fixed md:sticky bottom-0 md:top-1">
         <header class="rounded-full">
             <div class="border border-white/10 !bg-zinc-900/80 backdrop-blur-md rounded-full">
                 <nav

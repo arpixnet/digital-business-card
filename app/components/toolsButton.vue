@@ -16,13 +16,13 @@
         }
     }
 
-    const addToGoogleWallet = () => {
+    // const addToGoogleWallet = () => {
         
-    }
+    // }
 
-    const addToAppleWallet = () => {
+    // const addToAppleWallet = () => {
         
-    }
+    // }
 
     const items = ref([
         {
@@ -35,16 +35,16 @@
             icon: 'lucide:share',
             command: shareUrl
         },
-        {
-            label: 'Google Wallet',
-            icon: 'lineicons:google-wallet',
-            command: addToGoogleWallet
-        },
-        {
-            label: 'Apple Wallet',
-            icon: 'fa6-brands:apple-pay',
-            command: addToAppleWallet
-        }
+        // {
+        //     label: 'Google Wallet',
+        //     icon: 'lineicons:google-wallet',
+        //     command: addToGoogleWallet
+        // },
+        // {
+        //     label: 'Apple Wallet',
+        //     icon: 'fa6-brands:apple-pay',
+        //     command: addToAppleWallet
+        // }
     ])
 </script>
 
@@ -54,7 +54,7 @@
             :model="items"
             direction="down-right"
             type="quarter-circle"
-            :radius="120"
+            :radius="80"
             buttonClass="p-button-secondary p-button-rounded"
             :style="{ position: 'fixed', left: '15px', top: '15px' }"
         >
@@ -72,6 +72,7 @@
                 <div
                     v-else
                     class="w-[46px] h-[46px] flex items-center justify-center rounded-full bg-zinc-900 border border-white/15 hover:bg-zinc-800 cursor-pointer"
+                    v-tooltip="{ value: 'Ver código QR', showDelay: 400, hideDelay: 0 }"
                 >
                     <ArpixQrModal  type="text" :value="currentUrl" :isModal="true" />
                 </div>

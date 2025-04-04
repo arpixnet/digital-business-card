@@ -3,51 +3,64 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
 [![PrimeVue](https://img.shields.io/badge/PrimeVue-4AB7D6?logo=vue.js)](https://primevue.org)
 
-# Nuxt 3 + Tailwind CSS + PrimeVue Boilerplate
+# Digital Business Card
 
-A starter template with Nuxt 3, Tailwind CSS 4, PrimeVue 4, and dark mode support.
+A modern, responsive digital business card built with Nuxt 3, Tailwind CSS 4, and PrimeVue 4. This application serves as a digital alternative to traditional business cards, allowing professionals to share their contact information and professional profile through a web interface.
 
 ## Demo
 
-[Live Demo](https://nuxt3-primevue-boilerplate.vercel.app) - Check out the live demo of this boilerplate.
-
-![Screenshot](https://via.placeholder.com/800x400?text=Nuxt3+PrimeVue+Boilerplate+Screenshot)
+[Live Demo](https://lvizcaya.arpixnet.com) - Check out the live demo of this digital business card.
 
 ## Features
 
-- ✅ [Nuxt 3](https://nuxt.com/) - The progressive Vue framework
-- 🎨 [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS framework
-- 🧩 [PrimeVue 4](https://primevue.org/) - UI component library for Vue
-- 🌓 Integrated dark mode
-- 🌐 Internationalization with i18n
-- 🖼️ Image optimization with @nuxt/image
-- 🔤 Font optimization with @nuxt/fonts
-- 📦 Auto-imported components
+- ✅ **Professional Profile**: Display your name, title, photo, and professional information
+- 📱 **Responsive Design**: Works seamlessly on mobile, tablet, and desktop devices
+- 🌓 **Dark Mode Support**: Elegant dark theme for better viewing experience
+- 🔗 **Social Media Integration**: Connect all your professional social profiles
+- 📊 **Skills Showcase**: Highlight your professional skills with visual indicators
+- 📅 **Meeting Scheduler**: Direct link to Calendly for easy appointment scheduling
+- 📞 **Direct Contact**: One-click options to call, email, or message
+- 📱 **Add to Contacts**: Generate and download vCard for easy contact saving
+- 📤 **Share Functionality**: Native share capabilities for mobile devices
+- 🔄 **Multilingual Support**: Available in English and Spanish with i18n
+- 📱 **PWA Support**: Install as a Progressive Web App on mobile devices
+- 🖼️ **QR Code Generation**: Share your digital card via QR code
+
+## Technology Stack
+
+- **Frontend Framework**: [Nuxt 3](https://nuxt.com/) - Vue.js framework
+- **UI Framework**: [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS framework
+- **Component Library**: [PrimeVue 4](https://primevue.org/) - UI component suite
+- **Internationalization**: [@nuxtjs/i18n](https://i18n.nuxtjs.org/) - Multilingual support
+- **Icons**: [@nuxt/icon](https://github.com/nuxt/icon) - Icon integration
+- **Image Optimization**: [@nuxt/image](https://image.nuxtjs.org/) - Image processing
+- **PWA Support**: [@vite-pwa/nuxt](https://vite-pwa-org.netlify.app/) - Progressive Web App
+- **QR Code Generation**: [@chenfengyuan/vue-qrcode](https://github.com/chenfengyuan/vue-qrcode)
 
 ## Installation
 
 ### Option 1: Using nuxi
 
-You can create a new project based on this template using the `nuxi init` command with the template option:
+You can create a new project based on this template using the `nuxi init` command:
 
 ```bash
 # Using npx
-npx nuxi init my-project -t github:arpixnet/nuxt3-primevue-boilerplate
+npx nuxi init my-business-card -t github:arpixnet/digital-business-card
 
 # Or using pnpm
-pnpm dlx nuxi init my-project -t github:arpixnet/nuxt3-primevue-boilerplate
+pnpm dlx nuxi init my-business-card -t github:arpixnet/digital-business-card
 
 # Or using yarn
-yarn dlx nuxi init my-project -t github:arpixnet/nuxt3-primevue-boilerplate
+yarn dlx nuxi init my-business-card -t github:arpixnet/digital-business-card
 
 # Or using bun
-bunx nuxi init my-project -t github:arpixnet/nuxt3-primevue-boilerplate
+bunx nuxi init my-business-card -t github:arpixnet/digital-business-card
 ```
 
 Then navigate to your project directory and install dependencies:
 
 ```bash
-cd my-project
+cd my-business-card
 npm install # or pnpm install, yarn install, bun install
 ```
 
@@ -55,8 +68,8 @@ npm install # or pnpm install, yarn install, bun install
 
 ```bash
 # Clone the repository
-git clone https://github.com/arpixnet/nuxt3-primevue-boilerplate.git
-cd nuxt3-primevue-boilerplate
+git clone https://github.com/arpixnet/digital-business-card.git my-business-card
+cd my-business-card
 
 # Install dependencies
 npm install
@@ -70,29 +83,37 @@ bun install
 
 ## Configuration
 
-### Tailwind Configuration
+### Environment Variables
 
-You can customize the Tailwind configuration in the `tailwind.config.js` file:
+Copy the `.env.example` file to `.env` and customize the variables:
 
-```js
-// tailwind.config.js
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#4AB7D6',
-        // Add your custom colors here
-      }
-    }
-  }
-}
+```bash
+cp .env.example .env
 ```
 
-### PrimeVue Configuration
+Key environment variables to configure:
 
-PrimeVue is configured in the `assets/themes/config.js` file. You can customize the theme and other options there.
+```
+ME_FULL_NAME=Your Full Name
+ME_SHORT_NAME=yourname
+ME_EMAIL=your.email@example.com
+ME_PHONE=+1234567890
+ME_WHATSAPP=1234567890
+ME_WEBSITE=https://yourwebsite.com
+ME_ADDRESS=Your City, Country
+ME_BUSINESS=Your Company
 
-## Development Server
+COMPANY_NAME=Your Company
+COMPANY_EMAIL=info@yourcompany.com
+COMPANY_LOGO_PATH=/images/your_logo.png
+COMPANY_WEBSITE=https://yourcompany.com
+```
+
+### Profile Photo
+
+Replace the default avatar in `/public/images/avatar.jpg` with your professional photo.
+
+## Development
 
 Start the development server on `http://localhost:3000`:
 
@@ -144,73 +165,58 @@ yarn preview
 bun run preview
 ```
 
-## Project Structure
+## Deployment
 
-```
-├── app/
-│   ├── assets/           # Static assets (CSS, images, etc.)
-│   ├── components/       # Reusable Vue components
-│   ├── layouts/          # Application layouts
-│   ├── middleware/       # Nuxt middleware
-│   ├── pages/            # Application pages
-│   └── plugins/          # Nuxt plugins
-├── public/               # Public files
-├── server/               # Server code
-└── nuxt.config.ts        # Nuxt configuration
-```
+### Static Hosting
 
-For more information about deployment, check out the [Nuxt deployment documentation](https://nuxt.com/docs/getting-started/deployment).
-
-## Contributing
-
-Contributions are welcome! Here's how you can contribute to this project:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some amazing feature'`)
-5. Push to the branch (`git push origin feature/amazing-feature`)
-6. Open a Pull Request
-
-Please make sure to update tests as appropriate.
-
-## Troubleshooting
-
-### Common Issues
-
-#### Build Errors
-
-**Problem**: Build fails with dependency errors.
-
-**Solution**: Try clearing the cache and reinstalling dependencies:
+You can also generate a static version of the site:
 
 ```bash
-# Clear Nuxt cache
-rm -rf .nuxt
-rm -rf node_modules/.cache
-
-# Reinstall dependencies
-rm -rf node_modules
-npm install
+npm run generate
 ```
 
-#### Development Server Issues
+Then deploy the generated files in the `.output/public` directory to any static hosting service like Vercel, Netlify, or GitHub Pages.
 
-**Problem**: Hot reload not working properly.
+## Customization
 
-**Solution**: Restart the development server with the `--force` flag:
+### Adding Social Media Links
 
-```bash
-npm run dev -- --force
+Edit the social media links in `app/pages/index.vue`:
+
+```javascript
+// Example of adding or modifying social links
+const socialLinks = [
+  { url: 'https://www.linkedin.com/in/yourprofile/', icon: 'garden:linkedin-fill-16', ariaLabel: 'LinkedIn' },
+  { url: 'https://github.com/yourusername', icon: 'garden:github-fill-16', ariaLabel: 'GitHub' },
+  // Add more social links as needed
+]
 ```
 
-## Changelog
+### Customizing Colors
 
-### v1.0.0 (2025-04-02)
+Modify the primary color in `nuxt.config.ts`:
 
-- Initial release
-- Nuxt 3 integration
-- Tailwind CSS 4 setup
-- PrimeVue 4 components
-- Dark mode support
-- i18n configuration
+```javascript
+tailwindcss: {
+  config: {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            DEFAULT: "#YourColor",
+            // Add color variations
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Created By
+
+[Arpix Solutions](https://arpixnet.com)

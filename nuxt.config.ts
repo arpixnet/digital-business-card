@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@primevue/nuxt-module',
     '@nuxtjs/i18n',
     '@nuxt/icon',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@vite-pwa/nuxt'
   ],
 
   css: ["~/assets/css/main.css"],
@@ -79,9 +80,55 @@ export default defineNuxtConfig({
     },
   },
 
-  runtimeConfig: {
-    public: {
-      exampleConfig: 'This is an example configuration value'
+  router: {
+    options: {
+      strict: false
     }
-  }
+  },
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Leonardo Vizcaya',
+      short_name: 'lvizcaya',
+      theme_color: '#FFC008',
+      background_color: '#121212',
+      display: 'standalone',
+      orientation: 'portrait',
+      scope: '/',
+      start_url: '/',
+      icons: [
+        {
+          src: 'icons/icon-96x96.png',
+          sizes: '96x96',
+          type: 'image/png'
+        },
+        {
+          src: 'icons/icon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'icons/icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 20
+    },
+    includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/**/*'],
+    devOptions: {
+      enabled: true,
+      type: 'module',
+      navigateFallback: 'index.html',
+      suppressWarnings: true,
+      disableRuntimeConfig: true
+    },
+  },
+
+  runtimeConfig: {
+    public: {}
+  },
 })

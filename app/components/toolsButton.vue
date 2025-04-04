@@ -1,7 +1,8 @@
 <script setup lang="ts">
     const config = useRuntimeConfig()
+    const route = useRoute()
     const currentUrl = computed(() => {
-        return typeof window !== 'undefined' ? window.location.href : ''
+        return route.fullPath
     })
 
     const shareUrl = () => {

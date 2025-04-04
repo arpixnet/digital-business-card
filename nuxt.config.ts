@@ -78,27 +78,27 @@ export default defineNuxtConfig({
   image: {
     format: ['webp'],
     provider: 'ipx',
-    domains: ['arpixnet.com']
+    domains: [process.env.DOMAIN || '']
   },
 
   site: {
-    url: 'https://lvizcaya.arpixnet.com',
-    name: 'Leonardo Vizcaya',
-    title: 'Leonardo Vizcaya - Business Card',
-    description: 'Soluciones de software personalizadas, desde arquitecturas escalables hasta interfaces intuitivas.',
+    url: process.env.ME_WEBSITE || '',
+    name: process.env.ME_FULL_NAME || '',
+    title: `${process.env.ME_FULL_NAME} - Business Card`,
+    description: process.env.SEO_DESCRIPTION || '',
     defaultLocale: 'es',
   },
   schemaOrg: {
     identity: defineOrganization({
       '@type': ['Organization'],
-      'name': 'Arpix Solutions',
-      'logo': '/images/arpix_logo.png',
+      'name': process.env.COMPANY_NAME || '',
+      'logo': process.env.COMPANY_LOGO_PATH || '',
     }),
   },
   seo: {
     meta: {
-      title: 'Leonardo Vizcaya - Business Card',
-      description: 'Soluciones de software personalizadas, desde arquitecturas escalables hasta interfaces intuitivas.',
+      title: `${process.env.ME_FULL_NAME} - Business Card`,
+      description: process.env.SEO_DESCRIPTION || '',
     },
   },
   app: {
@@ -114,7 +114,7 @@ export default defineNuxtConfig({
     includeAppSources: true,
   },
   gtag: {
-    id: process.env.GTAG_ID || 'GTM-WS9DBDG2',
+    id: process.env.GTAG_ID || '',
     enabled: process.env.NODE_ENV === 'production'
   },
 
@@ -126,8 +126,8 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Leonardo Vizcaya',
-      short_name: 'lvizcaya',
+      name: process.env.ME_FULL_NAME || '',
+      short_name: process.env.ME_SHORT_NAME || '',
       theme_color: '#FFC008',
       background_color: '#121212',
       display: 'standalone',
@@ -162,19 +162,19 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       me: {
-        fullName: 'Leonardo Vizcaya Savchenko',
-        email: 'lvizcaya@arpixnet.com',
-        phone: '+593997003308',
-        whatsapp: '593997003308',
-        website: 'https://lvizcaya.arpixnet.com',
-        address: 'Quito, Ecuador',
-        business: 'Arpix Solutions'
+        fullName: process.env.ME_FULL_NAME || '',
+        email: process.env.ME_EMAIL || '',
+        phone: process.env.ME_PHONE || '',
+        whatsapp: process.env.ME_WHATSAPP || '',
+        website: process.env.ME_WEBSITE || '',
+        address: process.env.ME_ADDRESS || '',
+        business: process.env.ME_BUSINESS || ''
       },
       company: {
-        name: "Arpix Solutions",
-        email: "contact@arpixnet.com",
-        logoPath: "/images/arpix_logo.png",
-        website: "https://www.arpixnet.com"
+        name: process.env.COMPANY_NAME || '',
+        email: process.env.COMPANY_EMAIL || '',
+        logoPath: process.env.COMPANY_LOGO_PATH || '',
+        website: process.env.COMPANY_WEBSITE || ''
       }
     }
   },

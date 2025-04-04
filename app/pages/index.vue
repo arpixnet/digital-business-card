@@ -78,7 +78,7 @@
                 </SpotlightButton>
             </div>
 
-            <!-- Sección de habilidades -->
+            <!-- Skills section -->
             <div class="w-full max-w-4xl mt-12">
                 <h3 class="text-2xl font-medium text-slate-300 text-center mb-8">Habilidades</h3>
 
@@ -94,16 +94,16 @@
                         ]" :key="index"
                             class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg">
                             
-                            <!-- Contenido unificado con icono y nombre en la misma línea -->
+                            <!-- Unified content with icon and name in the same line -->
                             <div class="flex items-center p-3">
-                                <!-- Icono en gris claro -->
+                                <!-- Light gray icon -->
                                 <Icon :name="skill.icon" class="size-5 text-slate-400 mr-3" />
                                 
-                                <!-- Nombre con efecto neón -->
+                                <!-- Name with neon effect -->
                                 <span class="text-primary-500 font-medium text-shadow-neon">{{ skill.name }}</span>
                             </div>
                             
-                            <!-- Líneas de conexión horizontales -->
+                            <!-- Horizontal connection lines -->
                             <div v-if="index < 5 && index % 3 !== 2" 
                                 class="absolute top-1/2 -right-4 w-8 h-0.5 bg-zinc-700 hidden md:block z-10"></div>
                         </div>

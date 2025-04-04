@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="w-full h-full min-h-screen">
         <LayoutNavBar />
@@ -13,7 +9,3 @@
         <LayoutScrollToTop />
     </div>
 </template>
-
-<style lang="css" scoped>
-
-</style>

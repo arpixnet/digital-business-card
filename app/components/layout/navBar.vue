@@ -33,9 +33,7 @@
     const route = useRoute()
     const localePath = useLocalePath()
     
-    // Función para agregar contacto
     const addContact = () => {
-        // Datos de contacto predefinidos
         const contactData = {
             name: "Leonardo Vizcaya Savchenko",
             email: "lvizcaya@arpixnet.com",
@@ -45,8 +43,7 @@
             address: "Quito, Ecuador",
             business: "Arpix Solutions"
         }
-        
-        // Crear vCard formato
+
         const vcard = `BEGIN:VCARD
             VERSION:3.0
             FN:${contactData.name}
@@ -59,7 +56,6 @@
             END:VCARD
         `;
         
-        // Crear blob y descargar
         const blob = new Blob([vcard], { type: 'text/vcard' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
@@ -86,8 +82,7 @@
                         class="flex items-center rounded-full border border-transparent px-6 py-1 transition-all duration-300 ease-in-out hover:border-white/5 hover:!bg-zinc-800/30 hover:backdrop-blur-3xl">
                         <Icon :name="item.icon" class="size-6 font-light" />
                     </NuxtLink>
-                    
-                    <!-- Botón de agregar contacto -->
+
                     <button
                         id="add-contact"
                         aria-label="Add contact information"

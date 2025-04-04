@@ -85,12 +85,12 @@
                 <div class="relative mx-auto px-4 py-8 border border-zinc-800/50 rounded-xl bg-zinc-950/80 backdrop-blur-sm">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
                         <div v-for="(skill, index) in [
-                            { name: 'Frontend', icon: 'lucide:layout', level: 8 },
-                            { name: 'Backend', icon: 'lucide:server', level: 7 },
-                            { name: 'IA', icon: 'lucide:brain', level: 6 },
-                            { name: 'DevOps', icon: 'lucide:git-branch', level: 5 },
-                            { name: 'Cloud', icon: 'lucide:cloud', level: 7 },
-                            { name: 'Automatización', icon: 'lucide:settings', level: 9 }
+                            { name: 'Frontend', icon: 'lucide:layout', level: 9 },
+                            { name: 'Backend', icon: 'lucide:server', level: 9 },
+                            { name: 'IA', icon: 'lucide:brain', level: 7 },
+                            { name: 'Automatización', icon: 'lucide:settings', level: 8 },
+                            { name: 'Gestión IT', icon: 'lucide:briefcase', level: 6 },
+                            { name: 'Liderazgo', icon: 'lucide:users', level: 8 }
                         ]" :key="index"
                             class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg"
                         >
@@ -99,6 +99,7 @@
                                     <Icon :name="skill.icon" class="size-5 text-slate-400 mr-3" />
                                     <span class="text-primary-500 font-medium text-shadow-neon">{{ skill.name }}</span>
                                 </div>
+
                                 <SkillLevel :level="skill.level" />
                             </div>
                         </div>

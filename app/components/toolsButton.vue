@@ -50,6 +50,7 @@
     <div class="fixed bottom-32 md:bottom-24 right-3 z-40">
         <SpeedDial
             :model="items"
+            ariaLabel="Tools"
             direction="right"
             type="semi-circle"
             :radius="60"

@@ -24,13 +24,16 @@
         <div class="flex flex-col gap-10 items-center">
             <div
                 class="w-40 h-40 mt-4 rounded-full bg-primary-500 flex items-center justify-center p-[2px] overflow-hidden">
-                <NuxtImg src="/images/avatar.jpg" :alt="t('index.photo')"
-                    class="w-full h-full object-top object-cover rounded-full" loading="lazy" format="webp" />
+                <NuxtImg src="/images/avatar.jpg" :alt="t('index.photo')" size="156x156" width="156" height="156" preload 
+                    class="w-full h-full object-top object-cover rounded-full" loading="eager" format="webp" />
             </div>
 
             <!-- Personal information -->
             <div class="flex flex-col gap-8 md:gap-2 items-center">
-                <h1 class="text-4xl font-semibold text-center text-slate-300 animate-fade-in">
+                <h1 
+                    class="text-4xl font-semibold text-center text-slate-300 animate-fade-in"
+                    style="content-visibility: auto; contain-intrinsic-size: 80px;"
+                >
                     {{ config.public.me.fullName }}
                 </h1>
                 <h2 class="text-slate-400 text-md text-center animate-fade-in-delay-1">
@@ -47,33 +50,33 @@
             <!-- Social media icons -->
             <div class="flex flex-wrap gap-6 justify-center text-slate-300">
                 <NuxtLink v-for="(link, index) in [
-                    { url: 'https://www.linkedin.com/in/lvizcaya/', icon: 'garden:linkedin-fill-16' },
-                    { url: 'https://github.com/arpixnet', icon: 'garden:github-fill-16' },
-                    { url: 'https://x.com/leonardovizcaya', icon: 'garden:twitter-stroke-16' },
-                    { url: `https://api.whatsapp.com/send?phone=${config.public.me.whatsapp}`, icon: 'garden:whatsapp-stroke-16' },
-                    { url: 'https://medium.com/@leonardovizcaya', icon: 'formkit:medium' }
-                ]" :key="index" :to="link.url" target="_blank" class="hover:text-primary-100 cursor-pointer shadow">
+                    { url: 'https://www.linkedin.com/in/lvizcaya/', icon: 'garden:linkedin-fill-16', ariaLabel: 'LinkedIn' },
+                    { url: 'https://github.com/arpixnet', icon: 'garden:github-fill-16', ariaLabel: 'GitHub' },
+                    { url: 'https://x.com/leonardovizcaya', icon: 'garden:twitter-stroke-16', ariaLabel: 'Twitter' },
+                    { url: `https://api.whatsapp.com/send?phone=${config.public.me.whatsapp}`, icon: 'garden:whatsapp-stroke-16', ariaLabel: 'WhatsApp' },
+                    { url: 'https://medium.com/@leonardovizcaya', icon: 'formkit:medium', ariaLabel: 'Medium' }
+                ]" :key="index" :to="link.url" target="_blank" class="hover:text-primary-100 cursor-pointer shadow" :aria-label="link.ariaLabel">
                     <Icon :name="link.icon" size="26" />
                 </NuxtLink>
             </div>
 
             <!-- Action buttons -->
             <div class="flex flex-col md:flex-row gap-6 justify-center mt-4">
-                <Button severity="secondary" animate class="h-10 border-slate-100/15">
-                    <NuxtLink to="https://calendly.com/arpix" target="_blank"
-                        class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                <NuxtLink to="https://calendly.com/arpix" target="_blank"
+                    class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                    <Button severity="secondary" animate class="h-10 border-slate-100/15">
                         <span class="text-slate-300">{{ t('index.schedule_meeting') }}</span>
                         <Icon name="heroicons:calendar-days" class="size-6 text-slate-300" />
-                    </NuxtLink>
-                </Button>
+                    </Button>
+                </NuxtLink>
 
-                <Button severity="secondary" animate class="h-10 border-slate-100/15">
-                    <a :href="`tel:${config.public.me.phone}`" target="_blank"
-                        class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                <a :href="`tel://${config.public.me.phone}`" target="_blank"
+                    class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                    <Button severity="secondary" animate class="h-10 border-slate-100/15">
                         <span class="text-slate-300">{{ t('index.call_me') }}</span>
                         <Icon name="heroicons:phone" class="size-5 text-slate-300" />
-                    </a>
-                </Button>
+                    </Button>
+                </a>
             </div>
 
             <!-- Skills section -->

@@ -127,13 +127,13 @@
 
             <!-- CTA -->
             <div class="mt-8">
-                <Button severity="secondary" animate class="h-10 border-slate-100/15">
-                    <NuxtLink to="https://calendly.com/arpix" target="_blank"
-                        class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                <NuxtLink to="https://calendly.com/arpix" target="_blank"
+                    class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
+                    <Button severity="secondary" animate class="h-10 border-slate-100/15">
                         <span class="text-slate-300">{{ t('business.schedule_consultation') }}</span>
                         <Icon name="heroicons:calendar-days" class="size-6 text-slate-300" />
-                    </NuxtLink>
-                </Button>
+                    </Button>
+                </NuxtLink>
             </div>
         </div>
     </div>

@@ -7,7 +7,5 @@
             <slot></slot>
         </div>
         <LayoutFooter />
-
-        <LayoutScrollToTop />
     </div>
 </template>

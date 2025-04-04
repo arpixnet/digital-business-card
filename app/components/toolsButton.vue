@@ -1,15 +1,13 @@
 <script setup lang="ts">
+    const { t } = useI18n()
     const config = useRuntimeConfig()
-    const route = useRoute()
-    const currentUrl = computed(() => {
-        return route.fullPath
-    })
+    const currentUrl = ref(config.public.me.website)
 
     const shareUrl = () => {
         if (navigator.share) {
             navigator.share({
                 title: config.public.me.fullName,
-                text: 'Visita mi sitio web',
+                text: t('navigation.bcard'),
                 url: currentUrl.value
             })
             .catch(error => console.error('Error al compartir:', error))
@@ -26,12 +24,12 @@
 
     const items = ref([
         {
-            label: 'Ver código QR',
+            label: t('navigation.qr'),
             icon: 'qr',
             command: () => {}
         },
         {
-            label: 'Compartir',
+            label: t('navigation.share'),
             icon: 'lucide:share',
             command: shareUrl
         },
@@ -52,11 +50,11 @@
     <div class="fixed bottom-32 md:bottom-24 right-3 z-40">
         <SpeedDial
             :model="items"
-            direction="down-right"
-            type="quarter-circle"
-            :radius="80"
+            direction="right"
+            type="semi-circle"
+            :radius="60"
             buttonClass="p-button-secondary p-button-rounded"
-            :style="{ position: 'fixed', left: '15px', top: '15px' }"
+            :style="{ position: 'fixed', left: '10px', top: '170px' }"
         >
             <template #item="{ item, toggleCallback }">
                 <div 
@@ -72,7 +70,7 @@
                 <div
                     v-else
                     class="w-[46px] h-[46px] flex items-center justify-center rounded-full bg-zinc-900 border border-white/15 hover:bg-zinc-800 cursor-pointer"
-                    v-tooltip="{ value: 'Ver código QR', showDelay: 400, hideDelay: 0 }"
+                    v-tooltip="{ value: item.label, showDelay: 400, hideDelay: 0 }"
                 >
                     <ArpixQrModal  type="text" :value="currentUrl" :isModal="true" />
                 </div>

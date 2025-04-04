@@ -3,18 +3,16 @@
         colorMode: 'dark',
     })
 
-    const phrases = [
-        "Transformo tecnología en valor para tu empresa.",
-        "Desarrollo soluciones que impulsan tu negocio.",
-        "Automatizo procesos para maximizar tu eficiencia."
-    ]
-    const currentPhrase = ref(phrases[0])
+    const { t } = useI18n()
+
+    const currentPhrase = ref(t('index.phrases.0'))
     const phraseIndex = ref(0)
+    const config = useRuntimeConfig()
 
     onMounted(() => {
         const interval = setInterval(() => {
-            phraseIndex.value = (phraseIndex.value + 1) % phrases.length
-            currentPhrase.value = phrases[phraseIndex.value]
+            phraseIndex.value = (phraseIndex.value + 1) % 3
+            currentPhrase.value = t(`index.phrases[${phraseIndex.value}]`);
         }, 5000)
 
         return () => clearInterval(interval)
@@ -26,19 +24,19 @@
         <div class="flex flex-col gap-10 items-center">
             <div
                 class="w-40 h-40 mt-4 rounded-full bg-primary-500 flex items-center justify-center p-[2px] overflow-hidden">
-                <NuxtImg src="/images/avatar.jpg" alt="Fotografía"
+                <NuxtImg src="/images/avatar.jpg" :alt="t('index.photo')"
                     class="w-full h-full object-top object-cover rounded-full" loading="lazy" format="webp" />
             </div>
 
             <!-- Personal information -->
             <div class="flex flex-col gap-8 md:gap-2 items-center">
                 <h1 class="text-4xl font-semibold text-center text-slate-300 animate-fade-in">
-                    Leonardo Vizcaya Savchenko
+                    {{ config.public.me.fullName }}
                 </h1>
                 <h2 class="text-slate-400 text-md text-center animate-fade-in-delay-1">
-                    <span class="text-primary-500">Desarrollo de software</span> -
-                    <span class="text-primary-400">Inteligencia Artificial</span> -
-                    <span class="text-primary-300">Automatización</span>
+                    <span class="text-primary-500">{{ t('index.title1') }}</span> -
+                    <span class="text-primary-400">{{ t('index.title2') }}</span> -
+                    <span class="text-primary-300">{{ t('index.title3') }}</span>
                 </h2>
                 <p
                     class="h-16 text-2xl text-slate-500 text-center animate-fade-in-delay-2 flex items-center justify-center">
@@ -52,7 +50,7 @@
                     { url: 'https://www.linkedin.com/in/lvizcaya/', icon: 'garden:linkedin-fill-16' },
                     { url: 'https://github.com/arpixnet', icon: 'garden:github-fill-16' },
                     { url: 'https://x.com/leonardovizcaya', icon: 'garden:twitter-stroke-16' },
-                    { url: 'https://api.whatsapp.com/send?phone=593997003308', icon: 'garden:whatsapp-stroke-16' },
+                    { url: `https://api.whatsapp.com/send?phone=${config.public.me.whatsapp}`, icon: 'garden:whatsapp-stroke-16' },
                     { url: 'https://medium.com/@leonardovizcaya', icon: 'formkit:medium' }
                 ]" :key="index" :to="link.url" target="_blank" class="hover:text-primary-100 cursor-pointer shadow">
                     <Icon :name="link.icon" size="26" />
@@ -61,36 +59,36 @@
 
             <!-- Action buttons -->
             <div class="flex flex-col md:flex-row gap-6 justify-center mt-4">
-                <SpotlightButton severity="secondary" animate>
+                <Button severity="secondary" animate class="h-10 border-slate-100/15">
                     <NuxtLink to="https://calendly.com/arpix" target="_blank"
                         class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
-                        <span class="text-slate-300">Agenda una reunión</span>
+                        <span class="text-slate-300">{{ t('index.schedule_meeting') }}</span>
                         <Icon name="heroicons:calendar-days" class="size-6 text-slate-300" />
                     </NuxtLink>
-                </SpotlightButton>
+                </Button>
 
-                <SpotlightButton severity="secondary" animate>
-                    <NuxtLink to="tel:+593997003308" target="_blank"
+                <Button severity="secondary" animate class="h-10 border-slate-100/15">
+                    <a :href="`tel:${config.public.me.phone}`" target="_blank"
                         class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200">
-                        <span class="text-slate-300">Llámame</span>
+                        <span class="text-slate-300">{{ t('index.call_me') }}</span>
                         <Icon name="heroicons:phone" class="size-5 text-slate-300" />
-                    </NuxtLink>
-                </SpotlightButton>
+                    </a>
+                </Button>
             </div>
 
             <!-- Skills section -->
             <div class="w-full max-w-4xl mt-12">
-                <h3 class="text-2xl font-medium text-slate-300 text-center mb-8">Habilidades</h3>
+                <h3 class="text-2xl font-medium text-slate-300 text-center mb-8">{{ t('index.skills') }}</h3>
 
                 <div class="relative mx-auto px-4 py-8 border border-zinc-800/50 rounded-xl bg-zinc-950/80 backdrop-blur-sm">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
                         <div v-for="(skill, index) in [
-                            { name: 'Frontend', icon: 'lucide:layout', level: 9 },
-                            { name: 'Backend', icon: 'lucide:server', level: 9 },
-                            { name: 'IA', icon: 'lucide:brain', level: 7 },
-                            { name: 'Automatización', icon: 'lucide:settings', level: 8 },
-                            { name: 'Gestión IT', icon: 'lucide:briefcase', level: 6 },
-                            { name: 'Liderazgo', icon: 'lucide:users', level: 8 }
+                            { name: t('index.skill_names.frontend'), icon: 'lucide:layout', level: 9 },
+                            { name: t('index.skill_names.backend'), icon: 'lucide:server', level: 9 },
+                            { name: t('index.skill_names.ai'), icon: 'lucide:brain', level: 7 },
+                            { name: t('index.skill_names.automation'), icon: 'lucide:settings', level: 8 },
+                            { name: t('index.skill_names.it_management'), icon: 'lucide:briefcase', level: 6 },
+                            { name: t('index.skill_names.leadership'), icon: 'lucide:users', level: 8 }
                         ]" :key="index"
                             class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg"
                         >

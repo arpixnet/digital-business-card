@@ -1,3 +1,54 @@
 {
-    "home": "Inicio"
+    "navigation": {
+        "bcard": "Visita mi Digital Business Card",
+        "qr": "Ver código QR",
+        "share": "Compartir",
+        "add_contact": "Añadir información de contacto"
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados"
+    },
+    "index": {
+        "photo": "Fotografía",
+        "title": "CTO & Full Stack Developer",
+        "title1": "Desarrollo de software",
+        "title2": "Inteligencia Artificial",
+        "title3": "Automatización",
+        "phrases": [
+            "Transformo tecnología en valor para tu empresa.",
+            "Desarrollo soluciones que impulsan tu negocio.",
+            "Automatizo procesos para maximizar tu eficiencia."
+        ],
+        "skills": "Habilidades",
+        "skill_names": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "ai": "IA",
+            "automation": "Automatización",
+            "it_management": "Gestión IT",
+            "leadership": "Liderazgo"
+        },
+        "schedule_meeting": "Agenda una reunión",
+        "call_me": "Llámame"
+    },
+    "business": {
+        "about_us": "Sobre Nosotros",
+        "our_services": "Nuestros Servicios",
+        "services": {
+            "software_dev": "Desarrollo de Software",
+            "software_dev_desc": "Soluciones de software personalizadas, desde arquitecturas escalables hasta interfaces intuitivas.",
+            "ai": "Inteligencia Artificial",
+            "ai_desc": "Integración de IA generativa y modelos de lenguaje (LLM) para potenciar la automatización y toma de decisiones.",
+            "automation": "Automatización",
+            "automation_desc": "Optimizamos la eficiencia operativa con automatización de flujos empresariales, integrando sistemas para reducir fricción.",
+            "consulting": "Consultoría Tecnológica",
+            "consulting_desc": "Asesoramiento experto para ayudar a su empresa a tomar decisiones tecnológicas estratégicas y efectivas."
+        },
+        "schedule_consultation": "Agenda una consulta gratuita",
+        "about": [
+            "En Arpix Solutions, nos especializamos en el desarrollo de software empresarial, ofreciendo soluciones innovadoras y personalizadas que generan valor para su empresa a través de la tecnología.",
+            "Nuestros servicios abarcan desarrollo de software de extremo a extremo, desde arquitecturas escalables hasta interfaces intuitivas, integrando inteligencia artificial generativa y modelos de lenguaje (LLM) para potenciar la automatización y toma de decisiones. Además, optimizamos la eficiencia operativa con automatización de flujos empresariales, integrando sistemas para reducir fricción y maximizar productividad.",
+            "Trabajamos estrechamente con nuestros clientes para materializar sus ideas, brindando la asesoría tecnológica necesaria para llevar a cabo cada proyecto con éxito."
+          ]
+    }
 }

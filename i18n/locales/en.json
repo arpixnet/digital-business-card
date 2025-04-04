@@ -1,3 +1,54 @@
 {
-    "home": "Inicio"
+    "navigation": {
+        "bcard": "Visit my Digital Business Card",
+        "qr": "View QR code",
+        "share": "Share",
+        "add_contact": "Add contact information"
+    },
+    "footer": {
+        "rights": "All rights reserved"
+    },
+    "index": {
+        "photo": "Photo",
+        "title": "CTO & Full Stack Developer",
+        "title1": "Software Development",
+        "title2": "Artificial Intelligence",
+        "title3": "Automation",
+        "phrases": [
+            "I transform technology into value for your business.",
+            "I develop solutions that drive your business.",
+            "I automate processes to maximize your efficiency."
+        ],
+        "skills": "Skills",
+        "skill_names": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "ai": "AI",
+            "automation": "Automation",
+            "it_management": "IT Management",
+            "leadership": "Leadership"
+        },
+        "schedule_meeting": "Schedule a meeting",
+        "call_me": "Call me"
+    },
+    "business": {
+        "about_us": "About Us",
+        "our_services": "Our Services",
+        "services": {
+            "software_dev": "Software Development",
+            "software_dev_desc": "Custom software solutions, from scalable architectures to intuitive interfaces.",
+            "ai": "Artificial Intelligence",
+            "ai_desc": "Integration of generative AI and language models (LLM) to enhance automation and decision making.",
+            "automation": "Automation",
+            "automation_desc": "We optimize operational efficiency with business flow automation, integrating systems to reduce friction.",
+            "consulting": "Technology Consulting",
+            "consulting_desc": "Expert advice to help your company make strategic and effective technology decisions."
+        },
+        "schedule_consultation": "Schedule a free consultation",
+        "about": [
+            "At Arpix Solutions, we specialize in business software development, offering innovative and customized solutions that generate value for your business through technology.",
+            "Our services cover end-to-end software development, from scalable architectures to intuitive interfaces, integrating generative AI and language models (LLM) to enhance automation and decision making. We also optimize operational efficiency with business flow automation, integrating systems to reduce friction and maximize productivity.",
+            "We work closely with our clients to materialize their ideas, providing the technical advice needed to carry out each project successfully."
+          ]
+    }
 }

@@ -1,0 +1,7 @@
+node_modules
+output
+deploy.tar
+*.log
+*.map
+.env
+info.txt

@@ -36,17 +36,18 @@
 
                 <div class="flex items-center gap-4 text-slate-400">
                     <div class="flex items-center gap-2">
-                        <Icon name="lucide:mail" class="size-5" />
-                        <a :href="`mailto:${companyInfo.email}`" class="hover:text-primary-500 transition-colors">
-                            {{ companyInfo.email }}
-                        </a>
-                    </div>
-                    <div class="flex items-center gap-2">
                         <Icon name="lucide:globe" class="size-5" />
                         <NuxtLink to="https://arpixnet.com" target="_blank"
                             class="hover:text-primary-500 transition-colors">
                             arpixnet.com
                         </NuxtLink>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <Icon name="lucide:mail" class="size-5" />
+                        <a :href="`mailto:${companyInfo.email}`" class="hover:text-primary-500 transition-colors">
+                            {{ companyInfo.email }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Service 1 -->
                     <div
-                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/10 transition-all">
+                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/15 transition-all">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-fit h-fit bg-primary-500/20 p-3 rounded-lg flex items-center justify-center">
                                 <Icon name="lucide:code" class="size-6 text-primary-500" />
@@ -86,7 +87,7 @@
 
                     <!-- Service 2 -->
                     <div
-                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/10 transition-all">
+                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/15 transition-all">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-fit h-fit bg-primary-500/20 p-3 rounded-lg flex items-center justify-center">
                                 <Icon name="lucide:brain" class="size-6 text-primary-500" />
@@ -99,7 +100,7 @@
 
                     <!-- Service 3 -->
                     <div
-                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/10 transition-all">
+                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/15 transition-all">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-fit h-fit bg-primary-500/20 p-3 rounded-lg flex items-center justify-center">
                                 <Icon name="lucide:settings" class="size-6 text-primary-500" />
@@ -112,7 +113,7 @@
 
                     <!-- Service 4 -->
                     <div
-                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/10 transition-all">
+                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-6 backdrop-blur-sm hover:border-white/15 transition-all">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-fit h-fit bg-primary-500/20 p-3 rounded-lg flex items-center justify-center">
                                 <Icon name="lucide:lightbulb" class="size-6 text-primary-500" />

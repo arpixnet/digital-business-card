@@ -1,7 +1,9 @@
+import { defineOrganization } from 'nuxt-schema-org/schema';
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   future: { compatibilityVersion: 4 },
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     '@nuxt/fonts',
     '@nuxt/image',
@@ -11,7 +13,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon',
     '@nuxtjs/color-mode',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@nuxtjs/seo',
+    'nuxt-gtag',
   ],
 
   css: ["~/assets/css/main.css"],
@@ -64,12 +68,38 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'es',
     lazy: true,
-    strategy: 'no_prefix'
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
   },
   image: {
     format: ['webp'],
     provider: 'ipx',
-    // domains: ['example.com']
+    domains: ['arpixnet.com']
+  },
+
+  site: {
+    url: 'https://lvizcaya.arpixnet.com',
+    name: 'Leonardo Vizcaya',
+    title: 'Leonardo Vizcaya - Business Card',
+    description: 'Soluciones de software personalizadas, desde arquitecturas escalables hasta interfaces intuitivas.',
+    defaultLocale: 'es',
+  },
+  schemaOrg: {
+    identity: defineOrganization({
+      '@type': ['Organization'],
+      'name': 'Arpix Solutions',
+      'logo': '/images/arpix_logo.png',
+    }),
+  },
+  seo: {
+    meta: {
+      title: 'Leonardo Vizcaya - Business Card',
+      description: 'Soluciones de software personalizadas, desde arquitecturas escalables hasta interfaces intuitivas.',
+    },
   },
   app: {
     head: {
@@ -78,6 +108,14 @@ export default defineNuxtConfig({
         separator: '|',
       },
     },
+  },
+  sitemap: {
+    autoI18n: true,
+    includeAppSources: true,
+  },
+  gtag: {
+    id: process.env.GTAG_ID || 'GTM-WS9DBDG2',
+    enabled: process.env.NODE_ENV === 'production'
   },
 
   router: {
@@ -118,14 +156,7 @@ export default defineNuxtConfig({
       installPrompt: true,
       periodicSyncForUpdates: 20
     },
-    includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/**/*'],
-    devOptions: {
-      enabled: true,
-      type: 'module',
-      navigateFallback: 'index.html',
-      suppressWarnings: true,
-      disableRuntimeConfig: true
-    },
+    includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icons/**/*']
   },
 
   runtimeConfig: {
@@ -134,8 +165,8 @@ export default defineNuxtConfig({
         fullName: 'Leonardo Vizcaya Savchenko',
         email: 'lvizcaya@arpixnet.com',
         phone: '+593997003308',
-        title: 'Desarrollo de software - IA - Automatización',
-        website: 'https://arpixnet.com',
+        whatsapp: '593997003308',
+        website: 'https://lvizcaya.arpixnet.com',
         address: 'Quito, Ecuador',
         business: 'Arpix Solutions'
       },
@@ -143,12 +174,7 @@ export default defineNuxtConfig({
         name: "Arpix Solutions",
         email: "contact@arpixnet.com",
         logoPath: "/images/arpix_logo.png",
-        website: "https://arpixnet.com",
-        about: [
-          "En Arpix Solutions, nos especializamos en el desarrollo de software empresarial, ofreciendo soluciones innovadoras y personalizadas que generan valor para su empresa a través de la tecnología.",
-          "Nuestros servicios abarcan desarrollo de software de extremo a extremo, desde arquitecturas escalables hasta interfaces intuitivas, integrando inteligencia artificial generativa y modelos de lenguaje (LLM) para potenciar la automatización y toma de decisiones. Además, optimizamos la eficiencia operativa con automatización de flujos empresariales, integrando sistemas para reducir fricción y maximizar productividad.",
-          "Trabajamos estrechamente con nuestros clientes para materializar sus ideas, brindando la asesoría tecnológica necesaria para llevar a cabo cada proyecto con éxito."
-        ]
+        website: "https://www.arpixnet.com"
       }
     }
   },

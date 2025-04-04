@@ -3,15 +3,13 @@
         colorMode: 'dark',
     })
 
+    const config = useRuntimeConfig()
     const companyInfo = {
-        name: "Arpix Solutions",
-        email: "contact@arpixnet.com",
-        logoPath: "/images/arpix_logo.png",
-        about: [
-            "En Arpix Solutions, nos especializamos en el desarrollo de software empresarial, ofreciendo soluciones innovadoras y personalizadas que generan valor para su empresa a través de la tecnología.",
-            "Nuestros servicios abarcan desarrollo de software de extremo a extremo, desde arquitecturas escalables hasta interfaces intuitivas, integrando inteligencia artificial generativa y modelos de lenguaje (LLM) para potenciar la automatización y toma de decisiones. Además, optimizamos la eficiencia operativa con automatización de flujos empresariales, integrando sistemas para reducir fricción y maximizar productividad.",
-            "Trabajamos estrechamente con nuestros clientes para materializar sus ideas, brindando la asesoría tecnológica necesaria para llevar a cabo cada proyecto con éxito."
-        ]
+        name: config.public.company.name,
+        email: config.public.company.email,
+        logoPath: config.public.company.logoPath,
+        website: config.public.company.website,
+        about: config.public.company.about
     }
 </script>
 
@@ -21,14 +19,14 @@
             <!-- Logo and Title -->
             <div class="flex flex-col items-center gap-6">
                 <div class="w-40 h-40 flex items-center justify-center overflow-hidden">
-                    <NuxtLink to="https://arpixnet.com" target="_blank">
+                    <NuxtLink :to="companyInfo.website" target="_blank">
                         <NuxtImg :src="companyInfo.logoPath" :alt="companyInfo.name"
                             class="w-full h-full object-contain" loading="lazy" format="webp" />
                     </NuxtLink>
                 </div>
 
                 <h1 class="text-4xl font-semibold text-center text-slate-300">
-                    <NuxtLink to="https://arpixnet.com" target="_blank"
+                    <NuxtLink :to="companyInfo.website" target="_blank"
                         class="hover:text-primary-500 transition-colors">
                         {{ companyInfo.name }}
                     </NuxtLink>
@@ -37,7 +35,7 @@
                 <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 text-slate-400">
                     <div class="flex items-center gap-2">
                         <Icon name="lucide:globe" class="size-5" />
-                        <NuxtLink to="https://arpixnet.com" target="_blank"
+                        <NuxtLink :to="companyInfo.website" target="_blank"
                             class="hover:text-primary-500 transition-colors">
                             arpixnet.com
                         </NuxtLink>

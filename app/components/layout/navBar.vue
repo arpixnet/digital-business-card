@@ -28,20 +28,21 @@
                 return []
         }
     }
-    const navigation = getNavigation('home') as Record<any, any>
 
+    const navigation = getNavigation('home') as Record<any, any>
     const route = useRoute()
+    const config = useRuntimeConfig()
     const localePath = useLocalePath()
-    
+
     const addContact = () => {
         const contactData = {
-            name: "Leonardo Vizcaya Savchenko",
-            email: "lvizcaya@arpixnet.com",
-            phone: "+593997003308",
-            title: "Desarrollo de software - IA - Automatización",
-            website: "https://arpixnet.com",
-            address: "Quito, Ecuador",
-            business: "Arpix Solutions"
+            name: config.public.me.fullName,
+            email: config.public.me.email,
+            phone: config.public.me.phone,
+            title: config.public.me.title,
+            website: config.public.me.website,
+            address: config.public.me.address,
+            business: config.public.me.business
         }
 
         const vcard = `BEGIN:VCARD
@@ -55,12 +56,12 @@
             ORG:${contactData.business}
             END:VCARD
         `;
-        
+
         const blob = new Blob([vcard], { type: 'text/vcard' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'leonardo-vizcaya.vcf';
+        link.download = 'leonardo-vizcaya-contact.vcf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

@@ -30,7 +30,7 @@
                     class="w-full h-full object-top object-cover rounded-full" loading="lazy" format="webp" />
             </div>
 
-            <!-- Información personal con animaciones -->
+            <!-- Personal information -->
             <div class="flex flex-col gap-8 md:gap-2 items-center">
                 <h1 class="text-4xl font-semibold text-center text-slate-300 animate-fade-in">
                     Leonardo Vizcaya Savchenko
@@ -46,7 +46,7 @@
                 </p>
             </div>
 
-            <!-- Redes sociales con efectos hover -->
+            <!-- Social media icons -->
             <div class="flex flex-wrap gap-6 justify-center text-slate-300">
                 <NuxtLink v-for="(link, index) in [
                     { url: 'https://www.linkedin.com/in/lvizcaya/', icon: 'garden:linkedin-fill-16' },
@@ -59,7 +59,7 @@
                 </NuxtLink>
             </div>
 
-            <!-- Botones de acción con efectos mejorados -->
+            <!-- Action buttons -->
             <div class="flex flex-col md:flex-row gap-6 justify-center mt-4">
                 <SpotlightButton severity="secondary" animate>
                     <NuxtLink to="https://calendly.com/arpix" target="_blank"
@@ -85,27 +85,22 @@
                 <div class="relative mx-auto px-4 py-8 border border-zinc-800/50 rounded-xl bg-zinc-950/80 backdrop-blur-sm">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
                         <div v-for="(skill, index) in [
-                            { name: 'Frontend', icon: 'lucide:layout' },
-                            { name: 'Backend', icon: 'lucide:server' },
-                            { name: 'IA', icon: 'lucide:brain' },
-                            { name: 'DevOps', icon: 'lucide:git-branch' },
-                            { name: 'Cloud', icon: 'lucide:cloud' },
-                            { name: 'Automatización', icon: 'lucide:settings' }
+                            { name: 'Frontend', icon: 'lucide:layout', level: 8 },
+                            { name: 'Backend', icon: 'lucide:server', level: 7 },
+                            { name: 'IA', icon: 'lucide:brain', level: 6 },
+                            { name: 'DevOps', icon: 'lucide:git-branch', level: 5 },
+                            { name: 'Cloud', icon: 'lucide:cloud', level: 7 },
+                            { name: 'Automatización', icon: 'lucide:settings', level: 9 }
                         ]" :key="index"
-                            class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg">
-                            
-                            <!-- Unified content with icon and name in the same line -->
-                            <div class="flex items-center p-3">
-                                <!-- Light gray icon -->
-                                <Icon :name="skill.icon" class="size-5 text-slate-400 mr-3" />
-                                
-                                <!-- Name with neon effect -->
-                                <span class="text-primary-500 font-medium text-shadow-neon">{{ skill.name }}</span>
+                            class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg"
+                        >
+                            <div class="flex items-center justify-between p-3">
+                                <div class="flex items-center">
+                                    <Icon :name="skill.icon" class="size-5 text-slate-400 mr-3" />
+                                    <span class="text-primary-500 font-medium text-shadow-neon">{{ skill.name }}</span>
+                                </div>
+                                <SkillLevel :level="skill.level" />
                             </div>
-                            
-                            <!-- Horizontal connection lines -->
-                            <div v-if="index < 5 && index % 3 !== 2" 
-                                class="absolute top-1/2 -right-4 w-8 h-0.5 bg-zinc-700 hidden md:block z-10"></div>
                         </div>
                     </div>
                 </div>

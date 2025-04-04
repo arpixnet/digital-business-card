@@ -131,22 +131,6 @@
         }
     }
 
-    .social-icon-link {
-        @apply relative flex items-center justify-center w-10 h-10 rounded-full bg-zinc-800/50 border border-white/5 transition-all duration-300;
-    }
-
-    .social-icon-link:hover {
-        @apply text-slate-200 border-primary-500/50 transform -translate-y-1 shadow-lg shadow-primary-500/20;
-    }
-
-    .social-icon-container {
-        @apply flex items-center justify-center w-full h-full;
-    }
-
-    .social-icon-link:hover .social-icon-container {
-        animation: pulse 1.5s infinite;
-    }
-
     @keyframes pulse {
         0% {
             transform: scale(1);

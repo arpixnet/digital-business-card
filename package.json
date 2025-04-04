@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@nuxt/fonts": "^0.11.1",
     "@nuxt/icon": "^1.11.0",
     "@nuxt/image": "^1.10.0",
@@ -23,6 +24,7 @@
     "@vite-pwa/nuxt": "^1.0.0",
     "nuxt": "^3.16.2",
     "primevue": "^4.3.3",
+    "qrcode": "^1.5.4",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },

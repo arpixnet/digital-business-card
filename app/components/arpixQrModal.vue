@@ -46,14 +46,14 @@
 </script>
 
 <template>
-    <div>
-        <Icon v-if="isModal" class="cursor-pointer" name="cil:qr-code" @click="qrModal()" />
+    <div class="w-fit h-fit flex justify-center items-center">
+        <Icon v-if="isModal" class="cursor-pointer" name="cil:qr-code" size="20" @click="qrModal()" />
         <div v-else class="w-full flex justify-center p-2 bg-white shadow-md rounded-lg">
             <vue-qrcode :value="qrValue" :options="{ width: 110, margin: 0 }"></vue-qrcode>
         </div>
 
         <!-- #####  QR Modal ##### -->
-        <Dialog v-model:visible="qrShow" modal>
+        <Dialog v-model:visible="qrShow" modal dismissableMask>
             <template #container="{ closeCallback }">
                 <div class="w-full flex justify-center p-3">
                     <vue-qrcode :value="qrValue" :options="{ width: 200, margin: 0 }"></vue-qrcode>

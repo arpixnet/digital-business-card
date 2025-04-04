@@ -129,6 +129,27 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    public: {}
+    public: {
+      me: {
+        fullName: 'Leonardo Vizcaya Savchenko',
+        email: 'lvizcaya@arpixnet.com',
+        phone: '+593997003308',
+        title: 'Desarrollo de software - IA - Automatización',
+        website: 'https://arpixnet.com',
+        address: 'Quito, Ecuador',
+        business: 'Arpix Solutions'
+      },
+      company: {
+        name: "Arpix Solutions",
+        email: "contact@arpixnet.com",
+        logoPath: "/images/arpix_logo.png",
+        website: "https://arpixnet.com",
+        about: [
+          "En Arpix Solutions, nos especializamos en el desarrollo de software empresarial, ofreciendo soluciones innovadoras y personalizadas que generan valor para su empresa a través de la tecnología.",
+          "Nuestros servicios abarcan desarrollo de software de extremo a extremo, desde arquitecturas escalables hasta interfaces intuitivas, integrando inteligencia artificial generativa y modelos de lenguaje (LLM) para potenciar la automatización y toma de decisiones. Además, optimizamos la eficiencia operativa con automatización de flujos empresariales, integrando sistemas para reducir fricción y maximizar productividad.",
+          "Trabajamos estrechamente con nuestros clientes para materializar sus ideas, brindando la asesoría tecnológica necesaria para llevar a cabo cada proyecto con éxito."
+        ]
+      }
+    }
   },
 })

@@ -659,7 +659,9 @@ const MyPreset = definePreset(Aura, {
         }
     },
     css: ({ dt }) => `
-
+        .p-tooltip-text {
+            font-size: 0.5rem !important;
+        }
     `
 });
 

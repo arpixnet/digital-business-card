@@ -79,25 +79,33 @@
             </div>
 
             <!-- Sección de habilidades -->
-            <div class="w-full max-w-2xl mt-8">
-                <h3 class="text-2xl font-medium text-slate-300 text-center mb-6">Habilidades</h3>
+            <div class="w-full max-w-4xl mt-12">
+                <h3 class="text-2xl font-medium text-slate-300 text-center mb-8">Habilidades</h3>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div v-for="(skill, index) in [
-                        { name: 'Frontend', icon: 'lucide:layout', color: 'from-blue-500 to-cyan-400' },
-                        { name: 'Backend', icon: 'lucide:server', color: 'from-emerald-500 to-green-400' },
-                        { name: 'IA', icon: 'lucide:brain', color: 'from-purple-500 to-violet-400' },
-                        { name: 'DevOps', icon: 'lucide:git-branch', color: 'from-orange-500 to-amber-400' },
-                        { name: 'Cloud', icon: 'lucide:cloud', color: 'from-sky-500 to-blue-400' },
-                        { name: 'Automatización', icon: 'lucide:settings', color: 'from-red-500 to-rose-400' }
-                    ]" :key="index"
-                        class="bg-zinc-900/50 border border-white/5 rounded-lg p-4 backdrop-blur-sm hover:border-white/15 transition-all hover:transform hover:-translate-y-1 hover:shadow-lg">
-                        <div class="flex items-center gap-3">
-                            <div class="w-fit h-fit p-3 rounded-lg flex items-center justify-center"
-                                :class="`bg-gradient-to-br ${skill.color} bg-opacity-20`">
-                                <Icon :name="skill.icon" class="size-5 text-white" />
+                <div class="relative mx-auto px-4 py-8 border border-zinc-800/50 rounded-xl bg-zinc-950/80 backdrop-blur-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+                        <div v-for="(skill, index) in [
+                            { name: 'Frontend', icon: 'lucide:layout' },
+                            { name: 'Backend', icon: 'lucide:server' },
+                            { name: 'IA', icon: 'lucide:brain' },
+                            { name: 'DevOps', icon: 'lucide:git-branch' },
+                            { name: 'Cloud', icon: 'lucide:cloud' },
+                            { name: 'Automatización', icon: 'lucide:settings' }
+                        ]" :key="index"
+                            class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg">
+                            
+                            <!-- Contenido unificado con icono y nombre en la misma línea -->
+                            <div class="flex items-center p-3">
+                                <!-- Icono en gris claro -->
+                                <Icon :name="skill.icon" class="size-5 text-slate-400 mr-3" />
+                                
+                                <!-- Nombre con efecto neón -->
+                                <span class="text-primary-500 font-medium text-shadow-neon">{{ skill.name }}</span>
                             </div>
-                            <h4 class="text-lg font-medium text-slate-300">{{ skill.name }}</h4>
+                            
+                            <!-- Líneas de conexión horizontales -->
+                            <div v-if="index < 5 && index % 3 !== 2" 
+                                class="absolute top-1/2 -right-4 w-8 h-0.5 bg-zinc-700 hidden md:block z-10"></div>
                         </div>
                     </div>
                 </div>
@@ -143,5 +151,9 @@
         100% {
             transform: scale(1);
         }
+    }
+
+    .text-shadow-neon {
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
     }
 </style>

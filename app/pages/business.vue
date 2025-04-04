@@ -34,7 +34,7 @@
                     </NuxtLink>
                 </h1>
 
-                <div class="flex items-center gap-4 text-slate-400">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 text-slate-400">
                     <div class="flex items-center gap-2">
                         <Icon name="lucide:globe" class="size-5" />
                         <NuxtLink to="https://arpixnet.com" target="_blank"

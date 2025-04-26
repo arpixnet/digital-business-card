@@ -31,7 +31,7 @@
             <!-- Personal information -->
             <div class="flex flex-col gap-8 md:gap-2 items-center">
                 <h1 
-                    class="text-4xl font-semibold text-center text-slate-300 animate-fade-in"
+                    class="text-3xl md:text-4xl font-semibold text-center text-slate-300 animate-fade-in"
                     style="content-visibility: auto; contain-intrinsic-size: 80px;"
                 >
                     {{ config.public.me.fullName }}

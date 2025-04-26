@@ -90,7 +90,7 @@
                             { name: t('index.skill_names.backend'), icon: 'lucide:server', level: 9 },
                             { name: t('index.skill_names.ai'), icon: 'lucide:brain', level: 7 },
                             { name: t('index.skill_names.automation'), icon: 'lucide:settings', level: 8 },
-                            { name: t('index.skill_names.it_management'), icon: 'lucide:briefcase', level: 6 },
+                            { name: t('index.skill_names.it_management'), icon: 'lucide:briefcase', level: 8 },
                             { name: t('index.skill_names.leadership'), icon: 'lucide:users', level: 8 }
                         ]" :key="index"
                             class="relative border border-zinc-800/40 rounded-lg overflow-hidden bg-zinc-900/60 transition-all duration-300 hover:border-zinc-700/50 hover:shadow-lg"

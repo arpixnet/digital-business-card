@@ -25,7 +25,7 @@
             <div
                 class="w-40 h-40 mt-4 rounded-full bg-primary-500 flex items-center justify-center p-[2px] overflow-hidden">
                 <NuxtImg src="/images/avatar.jpg" :alt="t('index.photo')" size="156x156" width="156" height="156" preload 
-                    class="w-full h-full object-top object-cover rounded-full" loading="eager" format="webp" />
+                    class="w-full h-full object-top object-cover rounded-full" loading="eager" format="webp" quality="50" />
             </div>
 
             <!-- Personal information -->

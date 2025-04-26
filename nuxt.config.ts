@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
     '@nuxtjs/seo',
-    'nuxt-gtag',
+    '@zadigetvoltaire/nuxt-gtm'
   ],
 
   css: ["~/assets/css/main.css"],
@@ -113,9 +113,8 @@ export default defineNuxtConfig({
     autoI18n: true,
     includeAppSources: true,
   },
-  gtag: {
+  gtm: {
     id: process.env.GTAG_ID || '',
-    enabled: process.env.NODE_ENV === 'production'
   },
 
   router: {

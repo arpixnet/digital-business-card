@@ -10,7 +10,7 @@
                 return {
                     home: {
                         name: 'Home',
-                        to: '/',
+                        to: '/bc',
                         icon: 'lucide:house',
                     },
                     business: {

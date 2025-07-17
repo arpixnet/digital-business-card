@@ -31,6 +31,28 @@
         "schedule_meeting": "Schedule a meeting",
         "call_me": "Call me"
     },
+    "home": {
+        "welcome": "Welcome",
+        "subtitle": "Select the option you want to explore",
+        "options": {
+            "leonardo": {
+                "title": "Leonardo Vizcaya",
+                "subtitle": "Digital Business Card",
+                "description": "Discover my professional profile, skills and experience in software development"
+            },
+            "arpix": {
+                "title": "Arpix Solutions",
+                "subtitle": "Software Development",
+                "description": "Innovative technological solutions to boost your business"
+            },
+            "estilo": {
+                "title": "Estilo Radical",
+                "subtitle": "Men's Accessories Ecommerce",
+                "description": "Exclusive accessories for gentlemen with unique style and personality"
+            }
+        },
+        "visit": "Visit"
+    },
     "business": {
         "about_us": "About Us",
         "our_services": "Our Services",

@@ -51,7 +51,7 @@
             <div class="flex flex-wrap gap-6 justify-center text-slate-300">
                 <NuxtLink v-for="(link, index) in [
                     { url: 'https://www.linkedin.com/in/lvizcaya/', icon: 'garden:linkedin-fill-16', ariaLabel: 'LinkedIn' },
-                    { url: 'https://github.com/arpixnet', icon: 'garden:github-fill-16', ariaLabel: 'GitHub' },
+                    { url: 'https://github.com/lvizcaya', icon: 'garden:github-fill-16', ariaLabel: 'GitHub' },
                     { url: 'https://x.com/leonardovizcaya', icon: 'garden:twitter-stroke-16', ariaLabel: 'Twitter' },
                     { url: `https://api.whatsapp.com/send?phone=${config.public.me.whatsapp}`, icon: 'garden:whatsapp-stroke-16', ariaLabel: 'WhatsApp' },
                     { url: 'https://medium.com/@leonardovizcaya', icon: 'formkit:medium', ariaLabel: 'Medium' }
